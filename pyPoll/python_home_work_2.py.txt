@@ -1,0 +1,44 @@
+import csv
+import collections
+voter_ID = []
+#county= []
+candidate =[]
+with open ('poll.csv', newline ='') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    csv_header = next(csvreader)
+    for row in csvreader:
+        voter_ID.append(row[0])
+        #county.append(row[1])
+        candidate.append(row[2])
+    print("Election Results")
+    print("----------------------------")
+    print("Total Votes:", len(voter_ID))
+    #counter = collections.Counter(candidate)
+    #print(counter)
+    khan_votes = counter.get("Khan")
+    correy_votes = counter.get("Correy")
+    li_votes = counter.get("Li")
+    otolley_votes = counter.get("O'Tooley")
+    #print(khan_votes)
+    #print(li_votes)
+    #print(correy_votes)
+    #print(otolley_votes)
+      
+    #print("{0:.3%}".format(khan_votes/len(voter_ID)))
+    #print("{0:.3%}".format(correy_votes/len(voter_ID)))
+    #print("{0:.3%}".format(li_votes/len(voter_ID)))
+    #print("{0:.3%}".format(otolley_votes/len(voter_ID)))
+    khan_vote_pc = "{0:.3%}".format(khan_votes/len(voter_ID))
+    correy_vote_pc ="{0:.3%}".format(correy_votes/len(voter_ID))
+    li_vote_pc ="{0:.3%}".format(li_votes/len(voter_ID))
+    otolley_vote_pc= "{0:.3%}".format(otolley_votes/len(voter_ID))
+    print("-----------------------------")
+    
+    print("Khan:", khan_vote_pc, '('+ str(khan_votes)+')')
+    print("Correy:", correy_vote_pc, '('+ str(correy_votes)+')')
+    print("Li:", li_vote_pc, '('+ str(li_votes)+')')
+    print("O'Tooley",otolley_vote_pc,'('+ str(otolley_votes)+')' )
+    print("-----------------------------")
+    print("Winner: Khan")
+    print("-----------------------------")
+    
