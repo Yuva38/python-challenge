@@ -13,7 +13,7 @@ with open ('poll.csv', newline ='') as csvfile:
     print("Election Results")
     print("----------------------------")
     print("Total Votes:", len(voter_ID))
-    #counter = collections.Counter(candidate)
+    counter = collections.Counter(candidate)
     #print(counter)
     khan_votes = counter.get("Khan")
     correy_votes = counter.get("Correy")
